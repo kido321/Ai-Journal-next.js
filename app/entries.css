@@ -1,0 +1,58 @@
+.eneriesBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.Entriescard{
+    display: flex;
+    width: 100%;
+    height: 250px;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-top: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.Entriescard_c{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Gill Sans", sans-serif;
+   
+}
+
+.Entriescard_add{
+  
+    color:  #000000f9;
+    padding : 8px;
+    position: relative;
+    top: 70px;
+    background-color:rgb(221, 74, 109);;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    font-family: "Gill Sans", sans-serif;
+}
+.Entriescard_add:hover{
+
+    padding-top : 6px;
+    padding-bottom: 10px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    font-family: "Gill Sans", sans-serif;
+}

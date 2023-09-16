@@ -1,0 +1,32 @@
+.head{
+    position: relative;
+   display: flex;
+    justify-content: left;
+    margin-left: 10px;
+    top: 10px;
+    
+    font-family: "Gill Sans", sans-serif;   
+}
+.spaceleft{
+    display: flex;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    color: gray;
+    align-items: center ;
+    
+}
+.spaceleft:hover{
+    display: flex;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    color: black;
+    align-items: center ;
+    
+}
+.link{
+    text-decoration: none;
+    color: gray;
+
+}
