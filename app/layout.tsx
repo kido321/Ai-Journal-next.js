@@ -5,7 +5,7 @@ import { SessionProvider } from 'next-auth/react'
 import { Inter } from 'next/font/google'
 import  Login from './components/Login'
 import {NextAuthProvider} from './Provider'
-import "./App.css";
+import "./style/App.css";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,13 +23,15 @@ export default function RootLayout({
   
   return (
     <html lang="en">
+    
       <body className={inter.className}>
         
       
-      <main className='app'><NextAuthProvider>{children}</NextAuthProvider></main>
+      <main ><NextAuthProvider>{children}</NextAuthProvider></main>
      
       
       </body>
+  
     </html>
   )
 }
