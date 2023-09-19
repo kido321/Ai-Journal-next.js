@@ -18,7 +18,7 @@ export default function Home() {
       <Login />
     ) : (
      
-    <div className="App bg-black">
+    <div className="App">
       <Header/>
     </div>
  )} </div> 
