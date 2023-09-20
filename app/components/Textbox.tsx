@@ -2,11 +2,51 @@ import "@/app/style/Textbox.css"
 import React, { useState ,useEffect , useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import Openai from '@/app/openai';
+import { useMutation } from "@tanstack/react-query";
+import { MessageSc  } from "@/lib/validators/message";
+import { nanoid } from 'nanoid'
+
 
 let Questions = ["Whats on your mind?" , "How are you feeling?", "What are you thinking about?", "What, excited about?", "What are you grateful about?" ];
 
 
+
 export default function Textbox() {
+
+    const { mutate: sendMessage, isLoading } = useMutation({
+        mutationKey: ['sendMessage'],
+        // include message to later use it in onMutate
+        mutationFn: async (_message: MessageSc) => {
+          const response = await fetch('/api/messages', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ messages: [_message] }),
+          })
+    
+          return response.body
+        },
+        onSuccess: async (stream) => {
+            if (!stream) throw new Error('No stream')
+            const reader = stream.getReader()
+            const decoder = new TextDecoder()
+            let done = false
+            while (!done) {
+                const { value, done: _done } = await reader.read()
+                done = _done
+                if (value) {
+                    const message = decoder.decode(value)
+                    console.log(message)
+                }
+                }
+          console.log('message sent');
+       
+        },
+       
+      })
+
+
     const bottomRef = useRef<null | HTMLElement>(null);
     const [Message, setMessage] = useState("");
     const [Messages, setMessages] = useState<string[]>([]);
@@ -14,20 +54,17 @@ export default function Textbox() {
     const [count, setCount] = useState(0);
     
     const addmessage = () => {
+
+        const message: MessageSc = {
+            id: nanoid(),
+            text: Message,
+            isUserMessage: true,
+        }
+        sendMessage(message);
+
         setMessages(Messages.concat(Message));
         
-      };
-      async function main() {
-        const completion = await Openai.chat.completions.create({
-          messages: [{ role: 'user', content: 'you are a journal writing expert i need you to help me write a journal. you will do that by asking me series of questions that will help you analyze how my day was going whats on my mind something like that and when i tell you to write the journal you will do that and ask the questions one by one.' }],
-          model: 'gpt-3.5-turbo',
-        });
-        const response = completion.choices[0].message.content;
-        console.log(response);
-      }
-
-
-
+      };     
       useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: "smooth"});
 
@@ -51,10 +88,10 @@ const handleinput = () => {
 
 useEffect(() => {
     handlecount();
-    main();
+
   }, []);
 
-    return (
+  return (
         <div className="tbody">
       {divs}
       {Message && <button className=" buttonn font-bold " onClick={handleinput} >Continue -></button>}
