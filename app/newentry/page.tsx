@@ -20,7 +20,9 @@ export default function NewEntry() {
  <div className='App'>  <div className='head'> <Link href="/today" className = "spaceleft link"><ArrowBackIosIcon/>New Entry  </Link>
   </div>
   <div className='textbox_main'> 
+
 <Textbox/>
+  
   </div>
     </div>
 

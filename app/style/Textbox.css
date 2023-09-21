@@ -4,14 +4,9 @@
     top: 50px;
     padding-bottom: 100px;
     padding-bottom: 1000px;
+    text-align: left;
 }
 
-.question{
-    display: flex;
-    justify-self: start;
-    margin-left: 6px;
-    color: rgb(0, 15, 131);
-}
 
 .buttonn{
     top: 20px;

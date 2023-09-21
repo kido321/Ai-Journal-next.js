@@ -7,6 +7,7 @@ import  Login from './components/Login'
 import {NextAuthProvider} from './Provider'
 import "./style/App.css";
 import QueryClientProvider from './components/Providers'
+import { MessagesProvider } from './context/messages'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body className={inter.className}>
         
       
-      <main ><NextAuthProvider><QueryClientProvider>{children}</QueryClientProvider></NextAuthProvider></main>
+      <main ><NextAuthProvider><QueryClientProvider><MessagesProvider>{children}</MessagesProvider></QueryClientProvider></NextAuthProvider></main>
      
       
       </body>

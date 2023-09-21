@@ -1,0 +1,21 @@
+.user_message{
+    margin-left:10px;
+    margin-bottom:10px;
+    justify-self: start;
+    color:rgb(243, 81, 255); 
+    display: flex;
+    flex:start;
+    text-indent: 0;
+    padding-left: 0;
+}
+.Ai_message{
+    text-decoration: none;
+    margin-left:10px;
+    margin-bottom:10px;
+    justify-self: start;
+    color: rgb(0, 15, 131);
+    display: flex;
+    flex:start;
+    text-indent: 0;
+    padding-left: 0;
+}
