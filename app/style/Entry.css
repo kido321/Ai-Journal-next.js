@@ -1,0 +1,62 @@
+.entry_card{
+   /* border: 1px solid #d7d7d7; */
+   margin-top: 0px;
+   height: 600px;
+   background-color: rgb(255, 255, 255);
+   overflow-y: scroll;
+}
+.Entry_text{
+    padding-left: 8px;
+    width: 100%;
+    color:rgb(49, 128, 132); 
+    flex:start;
+    text-align: start;
+    justify-content: start;
+    vertical-align: baseline;
+    font-size: 14px;
+    font-family: "Courier New";
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+}
+.Entry_head{
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    border-bottom: #d4d4d4 solid 1px;
+    position: relative;
+    justify-self: start;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Courier New";
+    color: rgb(58, 58, 58);
+    margin-bottom: 10px;
+}
+.Entry_date{
+    position: relative;
+    display: flex;
+    justify-self: start;
+    width: 100%;
+    color: rgb(148, 148, 148);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.Entry_button
+{
+
+    display: flex;
+    position: relative;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    bottom: 0px;
+    background-color: #d33869;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Courier New";
+    color: black;
+    border-radius: 10px;
+
+}

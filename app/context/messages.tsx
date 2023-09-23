@@ -6,7 +6,7 @@ import { MessageSc } from '@/lib/validators/message'
 const defaultValue = [
   {
     id: nanoid(),
-    text: 'Hello, how can I help you?',
+    text: 'whats on your mind?',
     isUserMessage: false,
   },
 ]

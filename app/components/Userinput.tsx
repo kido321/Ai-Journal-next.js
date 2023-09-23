@@ -7,15 +7,25 @@ import { MessageSc  } from "@/lib/validators/message";
 import { nanoid } from 'nanoid'
 import { MessagesContext } from '@/app/context/messages'
 import { toast } from 'react-hot-toast'
+import {db} from '@/app/firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import {useSession} from 'next-auth/react'
+import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation';
 
 
-
-
+let Jornalwriten = false;
+let thereIsAmessage = false;
 function Userinput() {
+   const Route = useRouter();
+    const session  = useSession();
+
     const textareaRef = useRef<HTMLTextAreaElement | null>(null)
     const [input, setInput] = useState<string>('')
     const {messages} = useContext(MessagesContext);
     const messageArr = [...messages];
+    let texrarea = useRef<HTMLTextAreaElement | null>(null);
+
     const {
         addMessage,
         removeMessage,
@@ -88,25 +98,46 @@ function Userinput() {
     const [count, setCount] = useState(0);
     
     const addmessage = () => {
-
+        thereIsAmessage = true;
         const message: MessageSc = {
             id: nanoid(),
             text: Message,
             isUserMessage: true,
         }
         sendMessage(message);        
-      };   
+      };  
+      const addmessagefinal = () => {
+
+        const message: MessageSc = {
+            id: "00000000",
+            text: "write a summary of how my day went with less than 100 words",
+            isUserMessage: true,
+        }
+        sendMessage(message);        
+      };  
 
       const handleinput = (e: { preventDefault: () => void; }) => { 
-        e.preventDefault();
+        texrarea.current?.focus();
         addmessage();
         setMessage("");
 
     };
+    
+  
+    const handleEntry = async () => { 
+      Jornalwriten = true;
+        addmessagefinal();
+     };
 
+     const GotoEntry = async () => { 
+        Route.push(`/entry/3r3fcre0f4`);
+     };
+     
   return (
-   <div> <TextareaAutosize  className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}/> 
-    {Message && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Continue -{'>'}</button>}</div>
+
+   <div> <TextareaAutosize ref={texrarea} value={Message} className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}  /> 
+    <div className = "buttons">{(Message || thereIsAmessage) && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Go Deeper 
+    </button>}{(!Message && thereIsAmessage) && (!Jornalwriten) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Write Jornal</Button>} { (Jornalwriten) && <Button className=" button3 font-bold " variant="outline" onClick={GotoEntry}>Finish Entery</Button>} </div></div>
   )
 }
 

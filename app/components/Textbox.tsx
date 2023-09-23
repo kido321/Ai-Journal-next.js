@@ -12,7 +12,7 @@ export default function Textbox() {
 
   return (
         <div className="tbody">
-        <Chatmesseges/>
+        <Chatmesseges />
         <Userinput/>
       </div>
     )

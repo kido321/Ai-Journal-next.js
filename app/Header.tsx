@@ -16,7 +16,7 @@ export default function Header() {
     </div>
     <div  className=' flexer font_s head_2' >
        <Link href='/today' className='link' > <h1 className="space">Today</h1></Link>
-       <Link href='/entris' className='link'> <h1 className="space">Entries</h1></Link>
+       <Link href='/entries' className='link'> <h1 className="space">Entries</h1></Link>
        <Link href='/explore' className='link'>  <h1 className="space">Explore</h1></Link>
       </div>
       </div>

@@ -17,11 +17,6 @@ export async function POST(req: Request) {
 
   const parsedMessages = MessageArraySchema.parse(messages)
 
-  let messageArr = 1;
-  console.log('messageArr');
-  console.log(messageArr);
-
-messageArr = messageArr + 1;
 
   const outboundMessages: ChatGPTMessage[] = parsedMessages.map((message) => {
     return {
@@ -29,7 +24,7 @@ messageArr = messageArr + 1;
       content: message.text,
     }
   })
- 
+
   outboundMessages.unshift({
     role: 'system',
     content: journal_prompt,
@@ -46,7 +41,7 @@ messageArr = messageArr + 1;
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 150,
+    max_tokens: 400,
     stream: true,
     n: 1,
   }

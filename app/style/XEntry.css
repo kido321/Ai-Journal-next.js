@@ -1,0 +1,76 @@
+.xentry_card{
+    margin-top: 40px;
+    text-align: left;
+}
+.xentry_box{
+    text-align: left;
+    margin-top: 0px;
+    background-color: rgb(255, 249, 241);
+    padding: 10px;
+}
+
+.xentry_date{
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: "Courier New";
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(62, 64, 69);
+}
+.xentry_text{
+   
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: "Courier New";
+}
+
+.twoButtons{
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+.threeButtons{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+    font-family: "Courier New";
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(86, 89, 95);
+    margin-top: 10px;
+  
+}
+.summaryButton{
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.entryButton{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.deleteButton{
+    margin-right: 10px;
+}
+
+.summaryButton:hover{
+    padding: 2px;
+    margin-left: 10px;
+    padding-top: 4px;
+    margin-right: 10px;
+    background-color: rgb(246, 221, 221);
+    border-radius: 4px;
+   
+    
+}
+.entryButton:hover{
+    padding: 2px;
+    padding-top: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(246, 221, 221);
+    border-radius: 4px;
+}
