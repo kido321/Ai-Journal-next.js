@@ -1,17 +1,15 @@
 'use client'
 import React, { useState ,useEffect , useRef ,useContext } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import Openai from '@/app/openai';
 import { useMutation } from "@tanstack/react-query";
 import { MessageSc  } from "@/lib/validators/message";
 import { nanoid } from 'nanoid'
 import { MessagesContext } from '@/app/context/messages'
 import { toast } from 'react-hot-toast'
-import {db} from '@/app/firebase';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import {useSession} from 'next-auth/react'
 import { Button } from "@/components/ui/button"
 import { useRouter } from 'next/navigation';
+
 
 
 let Jornalwriten = false;

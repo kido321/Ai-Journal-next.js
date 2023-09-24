@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Login from './components/Login'
 import {useSession} from 'next-auth/react'
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Home() {
   const session  = useSession();
@@ -20,6 +21,7 @@ export default function Home() {
      
     <div className="App">
       <Header/>
+  <div className='Add_icon'><AddIcon/></div>
     </div>
  )} </div> 
   )
