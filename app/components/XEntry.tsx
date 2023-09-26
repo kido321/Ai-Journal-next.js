@@ -1,35 +1,48 @@
 'use client'
-import React from 'react'
+import React, { use } from 'react'
+import {useState ,useEffect} from 'react'
 import '../style/XEntry.css'
 import { db } from '@/firebase';
 import { SessionContext } from 'next-auth/react';
-import { doc, deleteDoc } from "firebase/firestore"
+import { doc, deleteDoc, Timestamp } from "firebase/firestore"
 import {useSession} from 'next-auth/react'
 import { redirect } from 'next/navigation';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { MessageArraySchema } from '@/lib/validators/message'
+import Entrydisplay from './Entrydisplay';
+const f = new Intl.DateTimeFormat('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
   } from "@/app/components/ui/popover"
+import { ChatGPTMessage } from '@/lib/openai-stream';
 
 type Props = {
     text: string;
     id:string;
-    time: string;
+    time: Date
+    entryMess: string;
 }
 
 
 
 
-function XEntry({text , time , id }: Props) {
+function XEntry({text , time , id  , entryMess}: Props) {
     const {data: session} = useSession({
         required: true,
         onUnauthenticated() {
           redirect('/') 
         },
       });
+      
+      
+ 
+
+
+      const [active ,setActive] = useState(false);
+
       const removeEntry = async (id:string)=>{
         console.log(id)
         await deleteDoc(doc(db, "user", session?.user?.email!, "entries", id))
@@ -39,11 +52,12 @@ function XEntry({text , time , id }: Props) {
 
     return (
         <div className='xentry_card'>
-            <div className='xentry_date'>{time}</div>
+            <div className='xentry_date'>{f.format(time)}</div>
             <div className='threeButtons'>
                 <div className='twoButtons'>
-                    <button className='summaryButton'>Summary</button>
-                    <button className='entryButton'>Entry</button>
+                    {active ? <div>hello</div>: <div>voooo</div>}
+                    <button className={active ? 'summaryButton2' : 'summaryButton'} onClick={()=> setActive(true)}>Summary</button>
+                    <button className={!active ? 'entryButton2' : 'entryButton'} onClick={()=> setActive(false)}>Entry</button>
                 </div>
                 <div>
     <div >
@@ -57,10 +71,11 @@ function XEntry({text , time , id }: Props) {
                 </div>
             </div>
             <div className='xentry_box'>
-                <div className='xentry_text'>{text}</div>
-            </div>
+             {active ?  <Entrydisplay entryMess={entryMess}/> : <div className='xentry_text'>{text}</div>}
+           </div>
         </div>
     );
 }
 
 export default XEntry
+  {/* {} <div className={active ? 'xentry_text' : 'xentry_textfalse'}>{text}</div> */}

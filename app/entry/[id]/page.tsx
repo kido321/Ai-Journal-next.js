@@ -1,5 +1,5 @@
 'use client'
-import React, { use } from 'react'
+import React, { useState } from 'react'
 import Header from '@/app/Header';
 import {useSession} from 'next-auth/react'
 import { redirect } from 'next/navigation';
@@ -21,23 +21,24 @@ function page() {
         redirect('/') 
     },
   }); 
+
   
   const {messages} = useContext(MessagesContext)
   const messageArr = [...messages];
+  const [message, setMessage] = useState([messageArr]);
   const x = [...messageArr]
   x.reverse();
+  const entryjson = JSON.stringify(message);
   const Route = useRouter();
   const redirectto = async () => {
     let x = [...messageArr]
     x.reverse();
       const doc = await addDoc( collection(db, 'user', session?.user?.email! ,'entries'),{
         UserId: session?.user?.email!,
-        Entry: x[0].text,
+        Entry_summary: x[0].text,
         CreatedAt:serverTimestamp(),
+        Entry:entryjson,
       });
-
-
-
     Route.push("/entries");
   }
   return (

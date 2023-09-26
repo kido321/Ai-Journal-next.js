@@ -12,6 +12,7 @@ import XEntry from '../components/XEntry';
 
 
 
+
 function page() {
   const {data: session} = useSession({
     required: true,
@@ -28,17 +29,17 @@ function page() {
 
 
 
+
   return (
     <div className='App'>
       <Header/> 
       {/* <NewEntriesCard/> */}
      <div> {entries?.docs.map((entry) => (
        
-        <XEntry key={entry.id} text={entry.data().Entry} time="tuesday september 20" id={entry.id}/>
+        <XEntry key={entry.id} text={entry.data().Entry_summary} time={Date(entry.data().CreatedAt)} id={entry.id} entryMess={entry.data().Entry} />
       ))}</div>
-      {entries && entries.docs.length > 0 && (
-        <XEntry text='lknkj,n' time='tuesday september 20' id='fsfdcsdcsa'/>
-      )}
+      {/* {entries?.docs?.length <  && (
+      )} */}
     </div>
   );
 

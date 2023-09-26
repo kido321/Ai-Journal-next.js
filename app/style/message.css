@@ -1,18 +1,4 @@
 .user_message{
-    margin-left:10px;
-    margin-bottom:10px;
-    justify-self: start;
-    color:rgb(49, 128, 132); 
-    display: flex;
-    flex:start;
-    text-indent: 0;
-    padding-left: 0;
-    font-size: 18px;
-    font-family: "Courier New";
-    text-decoration: none;
-    font-weight: 600;
-}
-.Ai_message{
     text-decoration: none;
     margin-left:10px;
     margin-bottom:10px;
@@ -26,6 +12,51 @@
     font-family: "Courier New";
     font-weight: 600;
 }
+.Ai_message{
+    
+    margin-left:10px;
+    margin-bottom:10px;
+    justify-self: start;
+    color:rgb(49, 128, 132); 
+    display: flex;
+    flex:start;
+    text-indent: 0;
+    padding-left: 0;
+    font-size: 18px;
+    font-family: "Courier New";
+    text-decoration: none;
+    font-weight: 600;
+}
 .NoDisplay{
     display: none;
+}
+.user_message_edisplay{
+    text-decoration: none;
+    margin-left:10px;
+    margin-bottom:10px;
+    justify-self: start;
+    color: rgb(60, 60, 60);
+    display: flex;
+    flex:start;
+    text-indent: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-family: "Courier New";
+    font-weight: 600;
+
+}
+.Ai_message_edisplay{
+    margin-left:10px;
+    margin-bottom:10px;
+    justify-self: start;
+    color:rgb(49, 128, 132); 
+    display: flex;
+    flex:start;
+    text-indent: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-family: "Courier New";
+    text-decoration: none;
+    font-weight: 600;
+    
 }

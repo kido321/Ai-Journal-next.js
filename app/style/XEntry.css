@@ -25,11 +25,16 @@
     font-size: 15px;
     font-family: "Courier New";
 }
+.xentry_textfalse{
+   
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: "Courier New";
+    color: rgb(35, 32, 238);
+}
 
 .twoButtons{
-    margin-left: 10px;
-    margin-right: 10px;
-    
+   
 }
 .threeButtons{
   display: flex;
@@ -43,34 +48,42 @@
   
 }
 .summaryButton{
-    margin-left: 10px;
-    margin-right: 10px;
+   width: 100px;
+ 
+    
+}
+.summaryButton2{
+    width: 100px;
+    
+    background-color: rgb(255, 249, 241);
     
 }
 
 .entryButton{
+    width: 100px;
     margin-left: 10px;
-    margin-right: 10px;
+    
+}
+.entryButton2{
+    width: 100px;
+    background-color: rgb(255, 249, 241);
+    
 }
 .deleteButton{
   font-weight: 600;
+  
 }
 
 .summaryButton:hover{
-    padding: 2px;
-    margin-left: 10px;
-    padding-top: 4px;
-    margin-right: 10px;
-    background-color: rgb(246, 221, 221);
+    
+    background-color: rgb(222, 197, 197);
     border-radius: 4px;
    
     
 }
 .entryButton:hover{
-    padding: 2px;
-    padding-top: 4px;
-    margin-left: 10px;
-    margin-right: 10px;
+    
+
     background-color: rgb(246, 221, 221);
     border-radius: 4px;
 }
@@ -81,6 +94,9 @@
     background-color: rgb(255, 237, 237);
 }
 .pop{
+    background-color: rgb(251, 251, 251);
     border: none;
     width: 100%;
+    height: 30px;
+    padding-top: 2px;
 }
