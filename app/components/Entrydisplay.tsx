@@ -7,8 +7,7 @@ type Props = {
 }
 
 function Entrydisplay({entryMess}: Props) {
-    console.log("entryMess");
-     console.log(entryMess);
+    
 
 const [arr , setArr] = useState([]);
 useEffect(() => {

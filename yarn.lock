@@ -3420,6 +3420,11 @@
   "resolved" "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
   "version" "2.0.4"
 
+"inspirational-quotes@^2.0.1":
+  "integrity" "sha512-IYJEdSUphF4HOoOiABua2l7aUZ2OBTc/NpihPuENF3ieXEBuywOTtYle7zzvZfEJKouG9utOwQpMQtm0GIB2BQ=="
+  "resolved" "https://registry.npmjs.org/inspirational-quotes/-/inspirational-quotes-2.0.1.tgz"
+  "version" "2.0.1"
+
 "internal-slot@^1.0.5":
   "integrity" "sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ=="
   "resolved" "https://registry.npmjs.org/internal-slot/-/internal-slot-1.0.5.tgz"

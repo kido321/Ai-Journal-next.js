@@ -1,15 +1,12 @@
 'use client'
-import { createContext, useState } from 'react'
+import { createContext, useState , useContext , } from 'react'
 import { nanoid } from 'nanoid'
 import { MessageSc } from '@/lib/validators/message'
 
-const defaultValue = [
-  {
-    id: nanoid(),
-    text: 'whats on your mind?',
-    isUserMessage: false,
-  },
-]
+import { JournalTypeContext } from './journalType'
+import { journal_prompt } from '@/constant/journalprompt'
+
+
 export const MessagesContext = createContext<{
   messages: MessageSc[]
   isMessageUpdating: boolean
@@ -17,6 +14,7 @@ export const MessagesContext = createContext<{
   removeMessage: (id: string) => void
   updateMessage: (id: string, updateFn: (prevText: string) => string) => void
   setIsMessageUpdating: (isUpdating: boolean) => void
+  cleanMessages: () => void
 }>({
   messages: [],
   isMessageUpdating: false,
@@ -24,15 +22,33 @@ export const MessagesContext = createContext<{
   removeMessage: () => {},
   updateMessage: () => {},
   setIsMessageUpdating: () => {},
+  cleanMessages: () => {},
+
 })
 
+
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
+  const {journalType , setJournalTypes  } = useContext(JournalTypeContext);
+  const defaultValue = [
+    {
+      id: nanoid(),
+      text: 'Whats on your mind?',
+      isUserMessage: false,
+    },
+  ]
+
+  // console.log(defaultValue);
+  // console.log(journalType);
   const [messages, setMessages] = useState(defaultValue)
   const [isMessageUpdating, setIsMessageUpdating] = useState<boolean>(false)
-
   const addMessage = (message: MessageSc) => {
     setMessages((prev) => [...prev, message])
   }
+
+  const cleanMessages = () => {
+    setMessages(defaultValue)
+  }
+
 
   const removeMessage = (id: string) => {
     setMessages((prev) => prev.filter((message) => message.id !== id))
@@ -61,6 +77,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         removeMessage,
         updateMessage,
         setIsMessageUpdating,
+        cleanMessages,
       }}>
       {children}
     </MessagesContext.Provider>

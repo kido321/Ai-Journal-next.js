@@ -2,9 +2,11 @@ import React from 'react'
 import { useContext  , useRef , useEffect} from 'react'
 import { MessagesContext } from '../context/messages'
 import "@/app/style/message.css";
+import { JournalTypeContext  } from '../context/journalType'
 
 function Chatmesseges() {
-const {messages} = useContext(MessagesContext)
+const {journalType , setJournalTypes  } = useContext(JournalTypeContext)
+const {messages } = useContext(MessagesContext)
 const messageArr = [...messages];
 const lastone = useRef<HTMLDivElement | null>(null);
 

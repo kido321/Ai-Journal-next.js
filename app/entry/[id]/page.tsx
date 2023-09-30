@@ -23,7 +23,7 @@ function page() {
   }); 
 
   
-  const {messages} = useContext(MessagesContext)
+  const {messages ,  cleanMessages} = useContext(MessagesContext)
   const messageArr = [...messages];
   const [message, setMessage] = useState([messageArr]);
   const x = [...messageArr]
@@ -39,8 +39,10 @@ function page() {
         CreatedAt:serverTimestamp(),
         Entry:entryjson,
       });
-    Route.push("/entries");
+      cleanMessages();
+      Route.push('/entries');
   }
+
   return (
     
     <div className="App">

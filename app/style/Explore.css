@@ -1,0 +1,81 @@
+.explorecard_box{
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: snap;
+   margin-top: 70px;
+   
+}
+
+.Gratitude{
+    background-image: url('/gratitude.png');
+    height: 220px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-position-x: -34px;
+    background-position-y: -24px;
+    background-blend-mode: multiply;
+    background-color: rgb(255, 255, 255);
+    
+    }
+.Morning{
+        background-image: url('/morning.png');
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        border-radius: 20px;
+        background-blend-mode: multiply;
+    }
+.Dream{
+        background-image: url('/dream.png');
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        border-radius: 20px;
+        background-blend-mode: multiply;
+    }
+.Negative{
+        background-image: url('/negative2.png');
+        height: 220px;
+        border-radius: 20px;
+
+    }
+.Evening{
+  
+        background-image: url('/evening2.png');
+        background-size: cover;
+        background-position: center;
+        height: 220px;
+        border-radius: 20px;
+        background-color: rgb(255, 207, 207);
+        background-blend-mode: multiply;
+    }
+.Evening:hover{
+
+    background-color: rgb(173, 190, 204);
+    cursor: pointer;
+}
+
+.size{
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+.text{
+    position: relative;
+    bottom: -161px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    color: rgb(120, 120, 120);
+}
+
+.arow{
+    position: relative;
+    top: 66px;
+    left: 185px;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    color: rgb(120, 120, 120);
+}

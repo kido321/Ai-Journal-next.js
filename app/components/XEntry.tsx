@@ -22,14 +22,12 @@ import { ChatGPTMessage } from '@/lib/openai-stream';
 type Props = {
     text: string;
     id:string;
-    time: Date
+    date: string;
     entryMess: string;
+    time: string;
 }
 
-
-
-
-function XEntry({text , time , id  , entryMess}: Props) {
+function XEntry({text , date , id  , entryMess ,time}: Props) {
     const {data: session} = useSession({
         required: true,
         onUnauthenticated() {
@@ -48,14 +46,13 @@ function XEntry({text , time , id  , entryMess}: Props) {
         await deleteDoc(doc(db, "user", session?.user?.email!, "entries", id))
         
         }  
-        
+        //console.log(typeof(time))
 
     return (
         <div className='xentry_card'>
-            <div className='xentry_date'>{f.format(time)}</div>
+            <div className='xentry_date'>{date}</div>
             <div className='threeButtons'>
                 <div className='twoButtons'>
-                    {active ? <div>hello</div>: <div>voooo</div>}
                     <button className={active ? 'summaryButton2' : 'summaryButton'} onClick={()=> setActive(true)}>Summary</button>
                     <button className={!active ? 'entryButton2' : 'entryButton'} onClick={()=> setActive(false)}>Entry</button>
                 </div>
@@ -71,11 +68,11 @@ function XEntry({text , time , id  , entryMess}: Props) {
                 </div>
             </div>
             <div className='xentry_box'>
-             {active ?  <Entrydisplay entryMess={entryMess}/> : <div className='xentry_text'>{text}</div>}
+             {!active ?  <Entrydisplay entryMess={entryMess}/> : <div className='xentry_text'>{text}</div>}
            </div>
         </div>
     );
 }
 
 export default XEntry
-  {/* {} <div className={active ? 'xentry_text' : 'xentry_textfalse'}>{text}</div> */}
+ 

@@ -26,7 +26,8 @@ function page() {
    session && query (collection(db, 'user' , session?.user?.email! , 'entries'),orderBy ('CreatedAt','asc'))
  
   );
-
+  let today = new Date();
+  console.log(today.getHours());
 
 
 
@@ -36,7 +37,7 @@ function page() {
       {/* <NewEntriesCard/> */}
      <div> {entries?.docs.map((entry) => (
        
-        <XEntry key={entry.id} text={entry.data().Entry_summary} time={Date(entry.data().CreatedAt)} id={entry.id} entryMess={entry.data().Entry} />
+        <XEntry key={entry.id} text={entry.data().Entry_summary} date={entry.data().CreatedAt.toDate().toUTCString()} time={entry.data().CreatedAt.toDate().toUTCString()} id={entry.id} entryMess={entry.data().Entry} />
       ))}</div>
       {/* {entries?.docs?.length <  && (
       )} */}

@@ -1,0 +1,16 @@
+.quote_card
+{
+    font-size: 19px;
+    padding-top: 30px;
+    margin-top: 30px;
+    font-family: cursive;
+    text-shadow: rgb(12, 0, 83) 0.9px 0 40px;
+}
+.quote_text
+{
+}
+.quote_author
+{
+  margin-top: 30px;
+
+}

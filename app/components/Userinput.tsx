@@ -9,12 +9,15 @@ import { toast } from 'react-hot-toast'
 import {useSession} from 'next-auth/react'
 import { Button } from "@/components/ui/button"
 import { useRouter } from 'next/navigation';
+import { JournalTypeContext  } from '../context/journalType'
+
 
 
 
 let Jornalwriten = false;
 let thereIsAmessage = false;
 function Userinput() {
+  const {journalType } = useContext(JournalTypeContext)
    const Route = useRouter();
     const session  = useSession();
 
@@ -89,8 +92,6 @@ function Userinput() {
             textareaRef.current?.focus()
           },
         })
-      
-
     const bottomRef = useRef<null | HTMLElement>(null);
     const [Message, setMessage] = useState("");
     const [count, setCount] = useState(0);

@@ -30,6 +30,7 @@
 
 .buttonn{
     margin-left: 15px;
+    margin-right: 20px;
     color: rgb(58, 58, 58);
     background-color:  rgb(221, 74, 109);
     border: 1px solid;
@@ -55,6 +56,7 @@
     font-size: 17px;
     margin-top: 30px;
     font-family: "Courier New";
+ 
 }
 .buttons{
     text-align: center;
@@ -68,6 +70,7 @@
     font-size: 17px;
     margin-top: 30px;
     font-family: "Courier New";
+    
 
 }
 .button3{
