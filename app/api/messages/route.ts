@@ -1,4 +1,4 @@
-import { journal_prompt } from '@/constant/journalprompt'
+import { journal_prompt  , first_question} from '@/constant/journalprompt'
 import { gratitude_journal } from '@/constant/gratitude_journal'
 import { dream_journal } from '@/constant/dream_journal'
 import { morning_journal } from '@/constant/morning_journal'

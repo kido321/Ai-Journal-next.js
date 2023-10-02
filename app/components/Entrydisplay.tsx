@@ -19,10 +19,22 @@ useEffect(() => {
 const refreshData = async ()  => {
 
          const parsedData = await JSON.parse(entryMess);
-            setArr(parsedData[0]);
+            let newArray = parsedData[0];
+            let count = 0;
+            if(newArray){
+            for (let i = newArray.length-1; i >= 0; i--) {
+                if (newArray[i].id === '00000000') {
+                    count = i;
+                    console.log("count");
+                    console.log(count);
+                }
+            }}
+            if(count) {
+                newArray = newArray.slice(0  , count-1);
+            }
+                setArr(newArray);
           }   
-        
-
+;
       
     
     return (

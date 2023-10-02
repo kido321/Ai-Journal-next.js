@@ -11,7 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MessageArraySchema } from '@/lib/validators/message'
 import Entrydisplay from './Entrydisplay';
-const f = new Intl.DateTimeFormat('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
 import {
     Popover,
     PopoverContent,
@@ -50,12 +50,15 @@ function XEntry({text , date , id  , entryMess ,time}: Props) {
 
     return (
         <div className='xentry_card'>
-            <div className='xentry_date'>{date}</div>
+            
             <div className='threeButtons'>
                 <div className='twoButtons'>
                     <button className={active ? 'summaryButton2' : 'summaryButton'} onClick={()=> setActive(true)}>Summary</button>
                     <button className={!active ? 'entryButton2' : 'entryButton'} onClick={()=> setActive(false)}>Entry</button>
-                </div>
+                    </div>
+
+                    <div className='xentry_date'><div className='check'>{date}</div></div>
+               
                 <div>
     <div >
                 <Popover >

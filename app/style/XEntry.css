@@ -10,20 +10,27 @@
 }
 
 .xentry_date{
-    text-align: left;
-    margin-left: 10px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    font-family: "Courier New";
+    display: flex;
+    margin-left: auto;
+    text-align: right;
+    justify-content: right;
+    margin-right: 0px;
+    width: 43%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(49, 128, 132); 
+    font-size: 16px;
     text-decoration: none;
-    font-weight: 600;
-    color: rgb(62, 64, 69);
+    font-weight: 500;
+    
+
+    
 }
 .xentry_text{
    
-    font-size: 18px;
-    font-family: "Courier New";
-    font-weight: 600
+    font-size: 16px;
+    font-family:"Courier New";
+    font-weight: 600;
+    color: rgb(62, 62, 62);
 }
 .xentry_textfalse{
    
@@ -34,9 +41,11 @@
 }
 
 .twoButtons{
+    display: flex;
    
 }
 .threeButtons{
+   
   display: flex;
   justify-content: space-between;
   font-size: 16px;
@@ -49,12 +58,15 @@
 }
 .summaryButton{
    width: 100px;
- 
+   font-size: 18px;
+   z-index: 100;
     
 }
 .summaryButton2{
     width: 100px;
     font-weight: 600;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
     background-color: rgb(255, 249, 241);
     
 }
@@ -62,11 +74,12 @@
 .entryButton{
     width: 100px;
     margin-left: 10px;
-    
+    font-size: 18px;
 }
 .entryButton2{
     font-weight: 600;
     width: 100px;
+    font-size: 18px;
     background-color: rgb(255, 249, 241);
     
 }
@@ -100,4 +113,7 @@
     width: 100%;
     height: 30px;
     padding-top: 2px;
+}
+.check{
+  margin-right: 10px;
 }

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { replace  , journal_prompt} from '@/constant/journalprompt'
+import { replace  , journal_prompt , replacefirstQuestion} from '@/constant/journalprompt'
 
 
 

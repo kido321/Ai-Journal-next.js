@@ -20,8 +20,9 @@ export default function Header() {
       <h1>AI Diary</h1>
       <button onClick={() => signOut()}>  <div className='space1'><  FormatListBulletedIcon /> </div></button>
     </div>
-    <div  className=' flexer font_s head_2' >
-       <Link href='/today' className='link' > <h1 className={pathname === '/today' ? 'active space ' : 'space'}>Today</h1></Link>
+    <div  className=' flexer font_s head_2 ' >
+    
+       <Link href='/today' className='link link_today' > <h1 className={pathname === '/today' ? 'active space ' : 'space'}>Today</h1></Link>
        <Link href='/entries' className='link'> <h1 className={pathname === '/entries' ? 'active space ' : 'space'}>Entries</h1></Link>
        <Link href='/explore' className='link'>  <h1 className={pathname === '/explore' ? 'active space ' : 'space'}>Explore</h1></Link>
       </div>

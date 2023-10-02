@@ -14,10 +14,13 @@ import { JournalTypeContext  } from '../context/journalType'
 
 
 
+
+
 let Jornalwriten = false;
 let thereIsAmessage = false;
 function Userinput() {
-  const {journalType } = useContext(JournalTypeContext)
+
+  
    const Route = useRouter();
     const session  = useSession();
 
@@ -92,7 +95,7 @@ function Userinput() {
             textareaRef.current?.focus()
           },
         })
-    const bottomRef = useRef<null | HTMLElement>(null);
+   
     const [Message, setMessage] = useState("");
     const [count, setCount] = useState(0);
     
@@ -129,11 +132,10 @@ function Userinput() {
      };
 
      const GotoEntry = async () => { 
-        Route.push(`/entry/3r3fcre0f4`);
+        Route.push(`/entry/3r3fg5g6e0f4`);
      };
      
   return (
-
    <div> <TextareaAutosize ref={texrarea} value={Message} className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}  /> 
     <div className = "buttons">{(Message || thereIsAmessage) && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Go Deeper 
     </button>}{(!Message && thereIsAmessage) && (!Jornalwriten) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Write Jornal</Button>} { (Jornalwriten) && <Button className=" button3 font-bold " variant="outline" onClick={GotoEntry}>Finish Entery</Button>} </div></div>

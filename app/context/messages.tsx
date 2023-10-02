@@ -1,10 +1,15 @@
 'use client'
-import { createContext, useState , useContext , } from 'react'
+import { createContext, useState , useContext , useEffect, use } from 'react'
 import { nanoid } from 'nanoid'
 import { MessageSc } from '@/lib/validators/message'
 
 import { JournalTypeContext } from './journalType'
-import { journal_prompt } from '@/constant/journalprompt'
+import { journal_prompt  , first_question} from '@/constant/journalprompt'
+
+
+
+
+
 
 
 export const MessagesContext = createContext<{
@@ -28,18 +33,39 @@ export const MessagesContext = createContext<{
 
 
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
-  const {journalType , setJournalTypes  } = useContext(JournalTypeContext);
-  const defaultValue = [
+  const {question} = useContext(JournalTypeContext);
+  console.log("question");
+  console.log(question);
+
+
+  let defaultValue = [
     {
       id: nanoid(),
-      text: 'Whats on your mind?',
+      text: question,
       isUserMessage: false,
     },
   ]
 
+ 
+
   // console.log(defaultValue);
   // console.log(journalType);
   const [messages, setMessages] = useState(defaultValue)
+  useEffect(() => {
+    defaultValue = [
+      {
+        id: nanoid(),
+        text: question,
+        isUserMessage: false,
+      },
+    ]
+    setMessages(defaultValue)
+
+    
+
+  }, [question])
+  console.log("mes");
+  console.log(messages);
   const [isMessageUpdating, setIsMessageUpdating] = useState<boolean>(false)
   const addMessage = (message: MessageSc) => {
     setMessages((prev) => [...prev, message])

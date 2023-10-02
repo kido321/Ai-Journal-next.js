@@ -5,7 +5,7 @@ import "@/app/style/message.css";
 import { JournalTypeContext  } from '../context/journalType'
 
 function Chatmesseges() {
-const {journalType , setJournalTypes  } = useContext(JournalTypeContext)
+
 const {messages } = useContext(MessagesContext)
 const messageArr = [...messages];
 const lastone = useRef<HTMLDivElement | null>(null);
