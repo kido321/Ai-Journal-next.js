@@ -9,6 +9,7 @@ import { db } from '@/app/firebase';
 import { collection, orderBy, query } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import XEntry from '../components/XEntry';
+import "@/app/style/Entry.css";
 
 
 
@@ -23,25 +24,23 @@ function page() {
 
   const [entries] = useCollection(
 
-   session && query (collection(db, 'user' , session?.user?.email! , 'entries'),orderBy ('CreatedAt','asc'))
+   session && query (collection(db, 'user' , session?.user?.email! , 'entries'),orderBy ('CreatedAt','desc'))
  
   );
   const f = new Intl.DateTimeFormat('en', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
-  entries?.docs.map((entry) => (
-    console.log(f.format(entry.data().CreatedAt.toDate()))
-  ))
 
 
   return (
     <div className='App'>
+      
       <Header/> 
       {/* <NewEntriesCard/> */}
-     <div> {entries?.docs.map((entry) => (
+      {entries?.docs.length === 0  && (<NewEntriesCard/>) }
+     <div className='mb-40'> {entries?.docs.map((entry) => (
        
         <XEntry key={entry.id} text={entry.data().Entry_summary} date={f.format(entry.data().CreatedAt.toDate())} time={entry.data().CreatedAt.toDate().getHours()} id={entry.id} entryMess={entry.data().Entry} />
       ))}</div>
-      {/* {entries?.docs?.length <  && (
-      )} */}
+    <div className='space_bottom'> </div>
     </div>
   );
 

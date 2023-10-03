@@ -25,8 +25,6 @@ const refreshData = async ()  => {
             for (let i = newArray.length-1; i >= 0; i--) {
                 if (newArray[i].id === '00000000') {
                     count = i;
-                    console.log("count");
-                    console.log(count);
                 }
             }}
             if(count) {

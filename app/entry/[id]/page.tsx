@@ -11,9 +11,15 @@ import Summary from "../../components/Summary"
 import { useRouter } from 'next/navigation';
 import {db} from '@/app/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { JournalTypeContext  } from '../../context/journalType'
+import { Timestamp } from 'firebase/firestore'
 
 
+
+
+ 
 function page() {
+  const current_timestamp = Timestamp.fromDate(new Date())
 
   const {data: session} = useSession({
     required: true,
@@ -21,6 +27,9 @@ function page() {
         redirect('/') 
     },
   }); 
+  const f = new Intl.DateTimeFormat('en', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+
+  const { setJournalWritenornot, setmessagecountfunction} = useContext(JournalTypeContext)
 
   
   const {messages ,  cleanMessages} = useContext(MessagesContext)
@@ -40,14 +49,15 @@ function page() {
         Entry:entryjson,
       });
       cleanMessages();
+      setmessagecountfunction(0)
+      setJournalWritenornot(false);
       Route.push('/entries');
   }
-
   return (
     
     <div className="App">
       <div className='Entry_head'>Entry Summary</div> 
-        <Summary/>
+        <Summary date={f.format(current_timestamp.toDate())} />
       <button className='Entry_button' onClick={redirectto}>Continue</button>
   </div>
  

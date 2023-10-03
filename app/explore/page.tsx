@@ -55,7 +55,7 @@ const clicked = (text: string , question: string) => {
     
  <div className='App'>
     <div> <Header/>
-    <div className='arow'><KeyboardArrowLeftIcon /><KeyboardArrowRightIcon/></div>
+    <div className='arrow'><KeyboardArrowLeftIcon /><KeyboardArrowRightIcon/></div>
  <div className='explorecard_box'>
 
  <Link href='/newentry' className='link'><button onClick={() =>clicked(gratitude_journal , "Can you name 3 things you are grateful for today?")}><ExploreCard bg= "Gratitude"/></button></Link>

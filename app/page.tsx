@@ -1,14 +1,10 @@
 'use client'
 import './style/App.css';
 import Header from './Header';
-import NewEntriesCard from './NewEntriesCard';
-import Entries from './Entries';
-import { SessionProvider } from 'next-auth/react'
-import { getServerSession } from 'next-auth'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import  Login from './components/Login'
 import {useSession} from 'next-auth/react'
 import AddIcon from '@mui/icons-material/Add';
+import CardAndCalander from './components/CardAndCalander';
 
 export default function Home() {
   const session  = useSession();
@@ -21,6 +17,7 @@ export default function Home() {
      
     <div className="App">
       <Header/>
+      <CardAndCalander/>
   <div className='Add_icon'><AddIcon/></div>
     </div>
  )} </div> 

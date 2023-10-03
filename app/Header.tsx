@@ -7,8 +7,12 @@ import Link from 'next/link';
 import { signOut } from 'next-auth/react';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation'
-
+import { usePathname } from 'next/navigation';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/app/components/ui/popover"
 
 export default function Header() {
   
@@ -18,7 +22,12 @@ export default function Header() {
   <div className='header_top' >
  <div className='flex align font_s head_1'>
       <h1>AI Diary</h1>
-      <button onClick={() => signOut()}>  <div className='space1'><  FormatListBulletedIcon /> </div></button>
+
+    
+      <Popover >
+  <PopoverTrigger className=" space1"><FormatListBulletedIcon/></PopoverTrigger>
+  <PopoverContent className="pop"><button className='logout_buttonn' onClick={() => signOut()}> Sign Out</button></PopoverContent>
+                </Popover>
     </div>
     <div  className=' flexer font_s head_2 ' >
     

@@ -8,8 +8,12 @@ import { MessagesContext } from '../context/messages'
 import "@/app/style/Entry.css";
 import "@/app/style/Textbox.css";
 
+type Props = {
 
-function Summary() {
+  date: string;
+
+}
+function Summary({date} : Props) {
   const {messages} = useContext(MessagesContext)
   const messageArr = [...messages];
   const {data: session} = useSession({
@@ -23,7 +27,7 @@ function Summary() {
     x.reverse();
   return (
     <div className='entry_card'>
-    <div className='Entry_date'>sunday october 23</div>
+    <div className='Entry_date'>{date}</div>
     <div className='Entry_text'>
 {x[0].text}
   </div>

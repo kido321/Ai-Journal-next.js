@@ -34,8 +34,7 @@ export const MessagesContext = createContext<{
 
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
   const {question} = useContext(JournalTypeContext);
-  console.log("question");
-  console.log(question);
+
 
 
   let defaultValue = [
@@ -64,8 +63,6 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     
 
   }, [question])
-  console.log("mes");
-  console.log(messages);
   const [isMessageUpdating, setIsMessageUpdating] = useState<boolean>(false)
   const addMessage = (message: MessageSc) => {
     setMessages((prev) => [...prev, message])

@@ -15,11 +15,9 @@ import { JournalTypeContext  } from '../context/journalType'
 
 
 
+  function Userinput() {
 
-let Jornalwriten = false;
-let thereIsAmessage = false;
-function Userinput() {
-
+  const {journalWriten, setJournalWritenornot, messagecount , setmessagecountfunction} = useContext(JournalTypeContext);
   
    const Route = useRouter();
     const session  = useSession();
@@ -100,7 +98,7 @@ function Userinput() {
     const [count, setCount] = useState(0);
     
     const addmessage = () => {
-        thereIsAmessage = true;
+        setmessagecountfunction(messagecount + 1);
         const message: MessageSc = {
             id: nanoid(),
             text: Message,
@@ -127,7 +125,7 @@ function Userinput() {
     
   
     const handleEntry = async () => { 
-      Jornalwriten = true;
+        setJournalWritenornot(true);
         addmessagefinal();
      };
 
@@ -137,8 +135,8 @@ function Userinput() {
      
   return (
    <div> <TextareaAutosize ref={texrarea} value={Message} className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}  /> 
-    <div className = "buttons">{(Message || thereIsAmessage) && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Go Deeper 
-    </button>}{(!Message && thereIsAmessage) && (!Jornalwriten) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Write Jornal</Button>} { (Jornalwriten) && <Button className=" button3 font-bold " variant="outline" onClick={GotoEntry}>Finish Entery</Button>} </div></div>
+    <div className = "buttons">{(Message || messagecount >2) && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Go Deeper 
+    </button>}{(!Message && messagecount > 2) && (!journalWriten) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Write Jornal</Button>} { (journalWriten) && <Button className=" button3 font-bold " variant="outline" onClick={GotoEntry}>Finish Entry</Button>} </div></div>
   )
 }
 

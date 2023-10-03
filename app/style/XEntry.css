@@ -1,12 +1,15 @@
 .xentry_card{
     margin-top: 40px;
     text-align: left;
+    max-height: 800px;
+    overflow:scroll;
 }
 .xentry_box{
     text-align: left;
     margin-top: 0px;
     background-color: rgb(255, 249, 241);
     padding: 10px;
+   
 }
 
 .xentry_date{
@@ -16,14 +19,11 @@
     justify-content: right;
     margin-right: 0px;
     width: 43%;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color:rgb(49, 128, 132); 
-    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(105, 105, 105); 
+    font-size: 13px;
     text-decoration: none;
     font-weight: 500;
-    
-
-    
 }
 .xentry_text{
    
@@ -31,6 +31,7 @@
     font-family:"Courier New";
     font-weight: 600;
     color: rgb(62, 62, 62);
+  
 }
 .xentry_textfalse{
    
@@ -66,7 +67,7 @@
     width: 100px;
     font-weight: 600;
     font-size: 18px;
-    color: rgb(0, 0, 0);
+    color: rgb(64, 64, 64);
     background-color: rgb(255, 249, 241);
     
 }
@@ -80,12 +81,13 @@
     font-weight: 600;
     width: 100px;
     font-size: 18px;
+    color: rgb(64, 64, 64);
     background-color: rgb(255, 249, 241);
     
 }
 .deleteButton{
   font-weight: 600;
-  
+  font-size: 16px;
 }
 
 .summaryButton:hover{

@@ -18,12 +18,9 @@ import { MessagesContext } from '@/app/context/messages'
  
 export async function POST(req: Request) {
   const { messages } = await req.json()
-  console.log('messages');
-  console.log(messages);
+
 
   const parsedMessages = MessageArraySchema.parse(messages)
-  console.log('parsedMessages');
-  console.log(parsedMessages);
 
   const outboundMessages: ChatGPTMessage[] = parsedMessages.map((message) => {
     return {

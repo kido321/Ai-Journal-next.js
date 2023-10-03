@@ -46,7 +46,6 @@ function XEntry({text , date , id  , entryMess ,time}: Props) {
         await deleteDoc(doc(db, "user", session?.user?.email!, "entries", id))
         
         }  
-        //console.log(typeof(time))
 
     return (
         <div className='xentry_card'>

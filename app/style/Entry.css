@@ -2,7 +2,7 @@
    /* border: 1px solid #d7d7d7; */
    margin-top: 0px;
    height: 600px;
-   background-color: rgb(255, 255, 255);
+   background-color: rgb(255, 241, 241);
    overflow-y: scroll;
 }
 .Entry_text{
@@ -13,10 +13,10 @@
     text-align: start;
     justify-content: start;
     vertical-align: baseline;
-    font-size: 14px;
+    font-size: 17px;
     font-family: "Courier New";
     font-weight: 600;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 241, 241);
     
 }
 .Entry_head{
@@ -37,9 +37,13 @@
     display: flex;
     justify-self: start;
     width: 100%;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    color: rgb(85, 85, 85);
+    background-color: rgb(255, 240, 240);
     padding: 10px;
+    font-family: 'Courier New';
+    letter-spacing: -0px;
+    font-weight: 700;
+    word-spacing: 0px;
 }
 .Entry_button
 {
@@ -60,4 +64,9 @@
     color: black;
     border-radius: 10px;
 
+}
+
+.space_bottom{
+    height: 150px;
+    background-color: rgb(255, 237, 237);
 }
