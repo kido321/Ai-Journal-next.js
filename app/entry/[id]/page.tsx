@@ -18,7 +18,7 @@ import { Timestamp } from 'firebase/firestore'
 
 
  
-function page() {
+export default function EntryId() {
   const current_timestamp = Timestamp.fromDate(new Date())
 
   const {data: session} = useSession({
@@ -64,4 +64,3 @@ function page() {
   )
 }
 
-export default page

@@ -14,7 +14,7 @@ import "@/app/style/Entry.css";
 
 
 
-function page() {
+export default function Entries() {
   const {data: session} = useSession({
     required: true,
     onUnauthenticated() {
@@ -45,5 +45,5 @@ function page() {
   );
 
 }
-export default page
+
 

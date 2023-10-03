@@ -6,7 +6,7 @@ import '../style/calendar.css'
 import CardAndCalander from '../components/CardAndCalander';
 
 
-function page() {
+export default function Today(){
 
 
 
@@ -21,4 +21,3 @@ function page() {
   )
 }
 
-export default page

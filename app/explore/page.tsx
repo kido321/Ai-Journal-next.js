@@ -19,7 +19,7 @@ import { JournalTypeContext  } from '../context/journalType'
 
 
 
-export default function Entries() {
+export default function Explore(){
   const {data: session} = useSession({
     required: true,
     onUnauthenticated() {
