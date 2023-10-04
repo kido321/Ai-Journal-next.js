@@ -101,13 +101,13 @@ import CreateIcon from '@mui/icons-material/Create';
     const [count, setCount] = useState(0);
     
     const addmessage = () => {
-        setmessagecountfunction(messagecount + 1);
         const message: MessageSc = {
             id: nanoid(),
             text: Message,
             isUserMessage: true,
         }
-        sendMessage(message);        
+        sendMessage(message);  
+        console.log("SENDIND MESSAGE");      
       };  
       const addmessagefinal = () => {
 
@@ -119,7 +119,7 @@ import CreateIcon from '@mui/icons-material/Create';
         sendMessage(message);        
       };  
 
-      const handleinput = (e: { preventDefault: () => void; }) => { 
+      const handleinput = () => { 
         texrarea.current?.focus();
         addmessage();
         setMessage("");
@@ -128,18 +128,27 @@ import CreateIcon from '@mui/icons-material/Create';
     
   
     const handleEntry = async () => { 
-        addmessagefinal();
-        GotoEntry();
+        if (Message) {
+          handleinput();
+          setTimeout(after, 3000);
+        }
+        else{
+          after();
+        }
+       
      };
-
+const after = () => {
+     addmessagefinal();
+     GotoEntry();
+}
      const GotoEntry = async () => { 
         Route.push(`/entry/3r3fg5g6e0f4`);
      };
      
   return (
    <div> <TextareaAutosize ref={texrarea} value={Message} className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}  /> 
-    <div > <div className = "buttons"><button className=" button1 font-bold " onClick={e => handleinput(e)} >Countinue
-    </button>{(!Message ) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Finish Entry<DoneIcon className='ml-2'/></Button>}</div> </div></div>
+    <div > <div className = "buttons"><button className="button1 font-bold" onClick={handleinput} >Countinue
+    </button> <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Finish Entry<DoneIcon className='ml-2'/></Button></div> </div></div>
   )
 }
 
