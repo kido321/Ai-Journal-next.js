@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Link from 'next/link';
 import {useState} from 'react'
 import Header from '@/app/Header';
 import NewEntriesCard from '@/app/NewEntriesCard';
@@ -9,7 +10,9 @@ import { db } from '@/app/firebase';
 import { collection, orderBy, query } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import XEntry from '../components/XEntry';
+import AddIcon from '@mui/icons-material/Add';
 import "@/app/style/Entry.css";
+import "../style/Header.css";
 
 
 

@@ -18,7 +18,6 @@ export default function Home() {
     <div className="App">
       <Header/>
       <CardAndCalander/>
-  <div className='Add_icon'><AddIcon/></div>
     </div>
  )} </div> 
   )

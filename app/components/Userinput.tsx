@@ -10,6 +10,9 @@ import {useSession} from 'next-auth/react'
 import { Button } from "@/components/ui/button"
 import { useRouter } from 'next/navigation';
 import { JournalTypeContext  } from '../context/journalType'
+import DoneIcon from '@mui/icons-material/Done';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CreateIcon from '@mui/icons-material/Create';
 
 
 
@@ -125,8 +128,8 @@ import { JournalTypeContext  } from '../context/journalType'
     
   
     const handleEntry = async () => { 
-        setJournalWritenornot(true);
         addmessagefinal();
+        GotoEntry();
      };
 
      const GotoEntry = async () => { 
@@ -135,8 +138,8 @@ import { JournalTypeContext  } from '../context/journalType'
      
   return (
    <div> <TextareaAutosize ref={texrarea} value={Message} className="input" placeholder="WRITE . . . ." onChange={e => setMessage(e.target.value)}  /> 
-    <div className = "buttons">{(Message || messagecount >2) && <button className=" buttonn font-bold " onClick={e => handleinput(e)} >Go Deeper 
-    </button>}{(!Message && messagecount > 2) && (!journalWriten) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Write Jornal</Button>} { (journalWriten) && <Button className=" button3 font-bold " variant="outline" onClick={GotoEntry}>Finish Entry</Button>} </div></div>
+    <div > <div className = "buttons"><button className=" button1 font-bold " onClick={e => handleinput(e)} >Countinue
+    </button>{(!Message ) && <Button className=" button2 font-bold " variant="outline" onClick={handleEntry}>Finish Entry<DoneIcon className='ml-2'/></Button>}</div> </div></div>
   )
 }
 

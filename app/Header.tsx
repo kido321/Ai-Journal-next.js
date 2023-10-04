@@ -18,7 +18,7 @@ export default function Header() {
   
   const pathname = usePathname()
   return (
-
+    
   <div className='header_top' >
  <div className='flex align font_s head_1'>
       <h1>AI Diary</h1>
@@ -35,7 +35,7 @@ export default function Header() {
        <Link href='/entries' className='link'> <h1 className={pathname === '/entries' ? 'active space ' : 'space'}>Entries</h1></Link>
        <Link href='/explore' className='link'>  <h1 className={pathname === '/explore' ? 'active space ' : 'space'}>Explore</h1></Link>
       </div>
-      <Link href='/newentry' className='link'> <div className='Add_icon'><AddIcon/></div></Link>
+     <div className='cont'><Link href='/newentry' className='Add_icon'><AddIcon/></Link></div> 
       </div>
   )
 }
