@@ -1,8 +1,6 @@
 .xentry_card{
     margin-top: 40px;
     text-align: left;
-    max-height: 800px;
-    overflow:scroll;
 }
 .xentry_box{
     text-align: left;
