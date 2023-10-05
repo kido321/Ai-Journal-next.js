@@ -70,7 +70,7 @@ function XEntry({text , date , id  , entryMess ,time}: Props) {
                 </div>
             </div>
             <div className='xentry_box'>
-             {!active ?  <Entrydisplay entryMess={entryMess}/> : <div className='xentry_text'>{text}</div>}
+             {active ?  <Entrydisplay entryMess={entryMess}/> : <div className='xentry_text'>{text}</div>}
            </div>
         </div>
     );
